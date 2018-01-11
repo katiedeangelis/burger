@@ -26,4 +26,4 @@ update: function(objColVals, condition, cb) {
 };
 
 // Export the database functions for the controller (burger_controller.js).
-module.exports = burgers;
+module.exports = burger;
