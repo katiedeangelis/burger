@@ -1,5 +1,13 @@
 <h1>Eat-Da-Burger!</h1>
 
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      <h3>{{> burgers/burgers-block}}</h3>
+    {{/unless}}
+  {{/each}}
+</ul>
+
 <form class="create-form">
 
   <div class="form-group">
