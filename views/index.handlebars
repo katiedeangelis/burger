@@ -3,21 +3,17 @@
 <h3>Burgers</h3>
 
 <ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      <li>{{ this.burgerName}}</li>
-    {{/unless}}
-  {{/each}}
+  {{#each burgers}} {{#unless devoured}}
+  <li>{{ this.burgerName}}</li>
+  {{/unless}} {{/each}}
 </ul>
 
 <h3>Not Devoured</h3>
 
 <ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      <li>{{ this.burgerName}}</li>
-    {{/if}}
-  {{/each}}
+  {{#each burgers}} {{#if devoured}}
+  <li>{{ this.burgerName}}</li>
+  {{/if}} {{/each}}
 </ul>
 
 <form class="create-form">
@@ -26,5 +22,5 @@
     <input type="text" id="burgerName" name="name">
   </div>
 
-  <button type="submit">Submit</button>
+  <button type="submit" value="Submit">Submit</button>
 </form>
