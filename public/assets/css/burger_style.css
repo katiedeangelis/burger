@@ -1,0 +1,12 @@
+.list-o-burgers {
+    display: flex;
+    justify-content: center;
+}
+
+.yummy-burger {
+    margin: 0 50px;
+}
+
+.yummy-burger img {
+    width: 200px;
+}
