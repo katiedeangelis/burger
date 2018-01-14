@@ -1,21 +1,29 @@
 <h1>Eat-Da-Burger!</h1>
 
-<h3>Burgers</h3>
+<div class="list-o-burgers">
+  <div class="undevoured-burgers">
+    <h3>Burgers</h3>
 
-<ul>
-  {{#each burgers}} {{#unless devoured}}
-  <li>{{ this.burgerName}}</li>
-  {{/unless}} {{/each}}
-</ul>
+    <ol>
+      {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devour=true}} {{/unless}} {{/each}}
+    </ol>
+  </div>
 
-<h3>Not Devoured</h3>
+  <div class="yummy-burger">
+    <img src="assets/img/burger.png" alt="burger">
+  </div>
 
-<ul>
-  {{#each burgers}} {{#if devoured}}
-  <li>{{ this.burgerName}}</li>
-  {{/if}} {{/each}}
-</ul>
+  <div class="devoured-burgers">
+    <h3>Devoured Burgers</h3>
 
+    <ol>
+      {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devour=false}} {{/if}} {{/each}}
+    </ol>
+  </div>
+
+</div>
+
+<h3>Type the Burger You'd Like to Add Below!</h3>
 <form class="create-form">
 
   <div class="form-group">

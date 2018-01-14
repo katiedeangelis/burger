@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
         };
 
         // Send the POST request.
-        $.ajax("/api/burgers", {
+        $.ajax("/api/burgers/create", {
             type: "POST",
             data: newBurger
         }).then(
@@ -20,4 +20,21 @@ window.addEventListener("load", function () {
             }
         );
     });
+
+    $(".change-devour").on("click", function (e) {
+        e.preventDefault();
+
+        $.ajax("/api/burgers/devour", {
+            type: "PUT",
+            data: {
+                id: $(this).data("id")
+            }
+        }).then(
+            function () {
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
 });
